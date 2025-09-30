@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atmo Weather</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Atmo Weather — прогноз погоди на 5 днів, поради та рекомендації.">
+  <meta name="keywords" content="погода, прогноз погоди, weather, Atmo Weather, 5 днів, температура, вітер">
+  <meta name="author" content="Atmo Team">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+  <!-- BACKGROUND -->
+  <div class="bg-wrap" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <!-- вставити одразу після <div class="bg-overlay"></div> -->
+  <div id="leaf-layer" aria-hidden="true"></div>
+
+
+  <main class="app">
+    <header class="top">
+      <h1 class="logo">Погода|AtmoWeather<span class="dot">.</span></h1>
+      <div class="inputs-wrap">
+        <div class="inputs">
+          <input id="cityInput" class="city" placeholder="Введіть місто — наприклад: Kyiv або Lviv,UA" aria-label="Місто" />
+          <button id="searchBtn" class="btn">Пошук</button>
+        </div>
+        <div id="suggestions" class="suggestions" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <!-- HEADER AD BANNER -->
+    <div id="adBanner" class="ad-banner" aria-hidden="true">
+      <a href="https://your-affiliate.link" target="_blank" rel="noopener noreferrer" class="ad-placeholder">
+        <div class="ad-label">Реклама</div>
+        <div class="ad-img">[Ваш банер тут]</div>
+      </a>
+    </div>
+
+    <!-- SPONSORED (optional) -->
+    <div id="sponsoredCard" class="sponsored-card hidden" aria-hidden="true">
+      <div class="spon-left">
+        <div class="spon-badge">Спонсор</div>
+        <h3>Спонсорований контент</h3>
+        <p id="sponText">Акційна пропозиція або короткий рекламний текст (120-160 символів)</p>
+        <a id="sponLink" href="#" class="btn small" target="_blank" rel="noopener noreferrer">Детальніше</a>
+      </div>
+      <div class="spon-right">
+        <img src="" alt="sponsor" id="sponImg" />
+      </div>
+    </div>
+
+    <!-- COOKIE / CONSENT -->
+    <div id="cookieConsent" class="cookie-consent hidden" role="dialog" aria-live="polite">
+      <div class="cookie-inner">
+        <div>Цей сайт використовує куки та сторонні сервіси (реклама). Продовжуючи, ви погоджуєтесь.</div>
+        <div class="cookie-actions">
+          <button id="acceptCookies" class="btn small">Прийняти</button>
+          <button id="rejectCookies" class="btn small outline">Відмовитись</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="card" class="card hidden" aria-live="polite">
+      <div class="current">
+        <div class="left">
+          <div id="location" class="location">—</div>
+          <div id="temp" class="temp">—°C</div>
+          <div id="desc" class="desc">—</div>
+          <div id="advice" class="advice">—</div>
+        </div>
+        <div class="right">
+          <div id="icon" class="icon-emoji" aria-hidden="true">—</div>
+          <div class="meta">
+            <div id="feels">Вітер: — м/с</div>
+            <div id="humidity">Вологість: —%</div>
+            <div id="timezone" class="timezone"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="forecast-title">Прогноз на 5 днів</h2>
+      <div id="forecast" class="forecast"></div>
+      <footer class="foot">Дані: Open-Meteo</footer>
+    </section>
+
+    <section id="hint" class="hint">Введіть місто і натисніть «Пошук». Сайт сам знайде координати і покаже прогноз.</section>
+       <div id="adBanner" class="ad-banner" aria-hidden="true">
+      <a href="https://your-affiliate.link" target="_blank" rel="noopener noreferrer" class="ad-placeholder">
+        <div class="ad-label">Реклама</div>
+        <div class="ad-img">[Ваш банер тут]</div>
+      </a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
